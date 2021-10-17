@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1280px;
     margin: 0px auto;
 }
 
@@ -24,6 +24,39 @@ body {
     flex-direction: column;
     width: 100%;
 }
+/*----------------------slider-container-----------------------*/
+
+.slider-container {
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+    overflow: hidden;
+}
+
+.slide {
+    position: relative;
+    display: none;
+    width: auto;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
+    animation: 0.5s ease-in-out;
+}
+
+.active,
+.next {
+    display: block;
+}
+
+.next {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+
+
+
 /*----------------------slider-panel-----------------------*/
 
 .slider-panel {
@@ -31,38 +64,55 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.title {
+    margin-bottom: 10%;
+    margin: 2% auto;
     width: 80%;
 }
+/*-------------------------title-slider---------------------------*/
 
-.button-box {
-    
+.title {
+    width: 70%;
 }
 
+.text {
+    position: relative;
+    display: none;
+    animation: 0.5s ease-in-out;
+}
+
+.active-text,
+.next-text {
+    display: block;
+}
+
+.next-text {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
 
 /*-------------------------buttons------------------------*/
 
 .button-box {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    width: 15%;
+    justify-content: flex-end;
+    width: 29%;
 }
 
 .slider-button {
     margin: 3%;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 2vw;
+    height: 2vw;
     background-color: gold;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .active-slider-button {
-    border: 0.15vw solid gold;
+    border: 0.2vw solid gold;
     background: none;
     border-radius: 50%;
 }
@@ -72,12 +122,10 @@ body {
 }
 
 .active-slider-button:hover {
-    border: 0.15vw solid #ff7300;
+    border: 0.2vw solid #ff7300;
     background: none;
     border-radius: 50%;
 }
-
-
 
 /*-------------------------footer-------------------------*/
 .foot__box {
@@ -87,7 +135,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin: 0 5%;
+    margin: 5% 3%;
     padding-top: 2%;
     border-top: 2px solid gold;
     color: #FFFFFF;
@@ -100,5 +148,58 @@ body {
 
 .foot__href:hover {
     color: gold;
+}
 
+/*---------------------animation-------------------------*/
+.to-left {
+    animation-name: left;
+}
+
+.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from-right {
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+/*---------------@media--------------------*/
+
+@media (max-width: 768px) {
+    .slider-panel {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .button-box {
+        margin-bottom: 5%;
+    }
+
+    .title {
+        align-self: flex-start;
+    }
 }
