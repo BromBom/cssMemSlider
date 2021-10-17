@@ -58,26 +58,26 @@ function nextSlide(x) {
 
 buttons[0].addEventListener('click', function() {
     if (isEnabled && (buttons[0].className !== 'slider-button active-slider-button')) {
-        previousSlide(1);
+        nextSlide(4);
     }
 });
 buttons[1].addEventListener('click', function() {
     if (isEnabled && (buttons[1].className !== 'slider-button active-slider-button')) {
-        previousSlide(2);
+        nextSlide(0);
     }
 });
 buttons[2].addEventListener('click', function() {
     if (isEnabled && (buttons[2].className !== 'slider-button active-slider-button')) {
-        previousSlide(3);
+        nextSlide(1);
     }
 });
 buttons[3].addEventListener('click', function() {
     if (isEnabled && (buttons[3].className !== 'slider-button active-slider-button')) {
-        previousSlide(4);
+        nextSlide(2);
     }
 });
 buttons[4].addEventListener('click', function() {
     if (isEnabled && (buttons[4].className !== 'slider-button active-slider-button')) {
-        previousSlide(0);
+        nextSlide(3);
     }
 });
