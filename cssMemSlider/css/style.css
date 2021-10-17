@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 3vw;
     color: gold;
     background-color: rgb(94, 105, 255);
@@ -23,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    overflow: hidden;
 }
 /*----------------------slider-container-----------------------*/
 
@@ -49,13 +51,10 @@ body {
 }
 
 .next {
-    position: relative;
+    position: absolute;
     top: 0;
     width: 100%;
 }
-
-
-
 
 /*----------------------slider-panel-----------------------*/
 
@@ -71,7 +70,10 @@ body {
 /*-------------------------title-slider---------------------------*/
 
 .title {
+    position: relative;
     width: 70%;
+    height: 2em;
+    overflow: hidden;
 }
 
 .text {
@@ -86,7 +88,7 @@ body {
 }
 
 .next-text {
-    position: relative;
+    position: absolute;
     top: 0;
     width: 100%;
 }
@@ -94,6 +96,7 @@ body {
 /*-------------------------buttons------------------------*/
 
 .button-box {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -200,6 +203,7 @@ body {
     }
 
     .title {
+        width: 100%;
         align-self: flex-start;
     }
 }
