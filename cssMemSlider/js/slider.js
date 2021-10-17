@@ -32,8 +32,7 @@ function showSlide(direction) {
     })
     texts[slideIndex].addEventListener('animationend', function() {
         this.classList.remove('next-text', direction);
-        this.classList.add('active-text');
-        isEnabled = true;
+        this.classList.add('active-text');  
     })
 }
 
@@ -58,17 +57,27 @@ function nextSlide(x) {
 }
 
 buttons[0].addEventListener('click', function() {
-    previousSlide(1);
+    if (isEnabled && (buttons[0].className !== 'slider-button active-slider-button')) {
+        previousSlide(1);
+    }
 });
 buttons[1].addEventListener('click', function() {
-    previousSlide(2);
+    if (isEnabled && (buttons[1].className !== 'slider-button active-slider-button')) {
+        previousSlide(2);
+    }
 });
 buttons[2].addEventListener('click', function() {
-    previousSlide(3);
+    if (isEnabled && (buttons[2].className !== 'slider-button active-slider-button')) {
+        previousSlide(3);
+    }
 });
 buttons[3].addEventListener('click', function() {
-    previousSlide(4);
+    if (isEnabled && (buttons[3].className !== 'slider-button active-slider-button')) {
+        previousSlide(4);
+    }
 });
 buttons[4].addEventListener('click', function() {
-    previousSlide(0);
+    if (isEnabled && (buttons[4].className !== 'slider-button active-slider-button')) {
+        previousSlide(0);
+    }
 });
