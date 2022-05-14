@@ -1,0 +1,233 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 3rem;
+  color: #ffd700;
+  background-color: #5e69ff;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper > input {
+  display: none;
+}
+
+.slider-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 89%;
+}
+
+.slider {
+	position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+	width: 89%;
+	height: 50vh;
+	overflow: hidden;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+	height: 10vh;
+  overflow: hidden;
+}
+
+.slide1 {
+  background-image: url(./assets/1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.slide2 {
+  background-image: url(./assets/2.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.slide3 {
+  background-image: url(./assets/3.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.slide4 {
+  background-image: url(./assets/4.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.slide5 {
+  background-image: url(./assets/5.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.controls {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+	width: 50px;
+}
+
+.dot {
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	cursor: pointer;
+  transition: all ease-in-out .5s;
+  background: #fff;
+  border: 4px solid #fff;
+  box-sizing: content-box;
+}
+
+label:hover .dot {
+  background: #ffd700;
+  border: 4px solid #ffd700;
+}
+
+#slide1:checked ~ .slider-panel .controls label[for="slide1"] .dot,
+#slide2:checked ~ .slider-panel .controls label[for="slide2"] .dot,
+#slide3:checked ~ .slider-panel .controls label[for="slide3"] .dot,
+#slide4:checked ~ .slider-panel .controls label[for="slide4"] .dot,
+#slide5:checked ~ .slider-panel .controls label[for="slide5"] .dot {
+	background: #5e69ff;
+}
+
+.slides {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  background-position: center;
+	z-index: 0;
+  opacity: 0;
+	transform: scale(1.5);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.texts {
+  position: absolute;
+  display: block;
+  color: #ffd700;
+  z-index: 0;
+  opacity: 0;
+	transform: translate(100%);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+  z-index: 1;
+	opacity: 1;
+	transform: scale(1);
+}
+
+#slide1:checked ~ .slider-panel .title > .text1,
+#slide2:checked ~ .slider-panel .title > .text2,
+#slide3:checked ~ .slider-panel .title > .text3,
+#slide4:checked ~ .slider-panel .title > .text4,
+#slide5:checked ~ .slider-panel .title > .text5 {
+  z-index: 1;
+	opacity: 1;
+	transform: translate(0%);
+}
+
+/*-------------------------footer-------------------------*/
+.foot {
+  width: 100%;
+}
+
+.foot__box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5% 3%;
+  padding-top: 2%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-top: 2px solid #ffd700;
+  color: #FFFFFF;
+}
+
+.foot__href {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.foot__href:hover {
+  color: #ffd700;
+}
+
+/*--------------------------------------------------*/
+
+@media (max-width: 1280px) {
+
+  body {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 860px) {
+
+  .slider-panel {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  body {
+    font-size: 2rem;
+  }
+
+  .title {
+    height: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+
+  body {
+    font-size: 1.5rem;
+  }
+}
