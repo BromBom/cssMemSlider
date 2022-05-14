@@ -100,10 +100,15 @@ body {
   align-items: center;
 }
 
-.controls label {
-	display: block;
-	position: relative;
-	margin: 20px 20px;
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+	width: 50px;
+}
+
+.dot {
 	height: 25px;
 	width: 25px;
 	border-radius: 50%;
@@ -114,16 +119,16 @@ body {
   box-sizing: content-box;
 }
 
-.controls label:hover {
+label:hover .dot {
   background: #ffd700;
   border: 4px solid #ffd700;
 }
 
-#slide1:checked ~ .slider-panel .controls label:nth-of-type(1),
-#slide2:checked ~ .slider-panel .controls label:nth-of-type(2),
-#slide3:checked ~ .slider-panel .controls label:nth-of-type(3),
-#slide4:checked ~ .slider-panel .controls label:nth-of-type(4),
-#slide5:checked ~ .slider-panel .controls label:nth-of-type(5) {
+#slide1:checked ~ .slider-panel .controls label[for="slide1"] .dot,
+#slide2:checked ~ .slider-panel .controls label[for="slide2"] .dot,
+#slide3:checked ~ .slider-panel .controls label[for="slide3"] .dot,
+#slide4:checked ~ .slider-panel .controls label[for="slide4"] .dot,
+#slide5:checked ~ .slider-panel .controls label[for="slide5"] .dot {
 	background: #5e69ff;
 }
 
@@ -196,15 +201,6 @@ body {
 }
 
 /*--------------------------------------------------*/
-
-@media (max-width: 1440px) {
-
-  .controls label {
-    margin: 10px 10px;
-    height: 25px;
-    width: 25px;
-  }
-}
 
 @media (max-width: 1280px) {
 
